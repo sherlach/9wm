@@ -10,7 +10,9 @@ all: 9wm
 
 9wm: 9wm.o event.o manage.o menu.o client.o grab.o cursor.o error.o
 
-install: 9wm
+install: install.bin install.man
+
+install.bin: 9wm
 	mkdir -p $(BIN)
 	cp 9wm $(BIN)/9wm
 
