@@ -20,8 +20,11 @@ many folks have done exactly this.
 Where do I get it?
 ==================
 
-The latest version of 9wm is held at:
+This version of 9wm is held at:
 
+<https://github.com/sherlach/9wm>
+
+The original version is held at:
 <https://github.com/9wm/9wm>
 
 
