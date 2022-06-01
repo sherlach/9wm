@@ -27,6 +27,7 @@ int curs;
 int border;
 char **myargv;
 char *termprog;
+char *mmprog;
 char *shell;
 Bool shape;
 int _border = 4;
@@ -78,7 +79,7 @@ sigchld(int signum)
 void
 usage(void)
 {
-	fprintf(stderr, "usage: 9wm [-version] [-cursor cursor] [-border] [-font fname] [-term prog] [-active color] [-inactive color] [exit|restart]\n");
+	fprintf(stderr, "usage: 9wm [-version] [-cursor cursor] [-border] [-font fname] [-term prog] [-mm prog] [-active color] [-inactive color] [exit|restart]\n");
 	exit(1);
 }
 
@@ -124,6 +125,8 @@ main(int argc, char *argv[])
 			fname = argv[++i];
 		else if (strcmp(argv[i], "-term") == 0 && i + 1 < argc)
 			termprog = argv[++i];
+		else if (strcmp(argv[i], "-mm") == 0 && i + 1 < argc)
+			mmprog = argv[++i];
 		else if (strcmp(argv[i], "-version") == 0) {
 			fprintf(stderr, "%s\n", version[0]);
 			exit(0);

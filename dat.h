@@ -105,6 +105,7 @@ extern int 		curs;
 extern char		**myargv;
 extern Bool 		shape;
 extern char 		*termprog;
+extern char 		*mmprog;
 extern char 		*shell;
 extern char 		*version[];
 extern int		_border;

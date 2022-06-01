@@ -62,8 +62,11 @@ menu to
 overriding the default.
 .IP "\-term termprog"
 Specifies an alternative program to run when the
-.I New
 menu item is selected.
+.IP "\-mm mmprog"
+Specifies an alternative program to run when the
+middle mouse button is clicked.
+.I New
 .IP "\-active color"
 Sets the color of the active window border, which defaults to black.
 .IP "\-inactive color"

@@ -64,7 +64,7 @@ button(XButtonEvent * e)
 		if ((e->state & (ShiftMask | ControlMask)) == (ShiftMask | ControlMask)) {
 			menuhit(e, &egg);
 		} else {
-			spawn(s, "9wm-mm");
+			spawn(s, mmprog, "9wm-mm");
 		}
 		return;
 	default:
@@ -77,7 +77,7 @@ button(XButtonEvent * e)
 		cmapnofocus(s);
 	switch (n = menuhit(e, &b3menu)) {
 	case 0:		/* New */
-		spawn(s, termprog);
+		spawn(s, termprog, "xterm");
 		break;
 	case 1:		/* Reshape */
 		reshape(selectwin(1, 0, s));
@@ -104,7 +104,7 @@ button(XButtonEvent * e)
 }
 
 void
-spawn(ScreenInfo * s, char *prog)
+spawn(ScreenInfo * s, char *prog, char *default_prog)
 {
 	if (fork() == 0) {
 		close(ConnectionNumber(dpy));
@@ -117,8 +117,9 @@ spawn(ScreenInfo * s, char *prog)
 			fprintf(stderr, "9wm: exec %s", shell);
 			perror(" failed");
 		}
-		execlp("xterm", "xterm", NULL);
-		perror("9wm: exec xterm failed");
+		execlp(default_prog, default_prog, NULL);
+        fprintf(stderr, "9wm: exec %s", default_prog);
+		perror(" failed");
 		exit(1);
 	}
 }

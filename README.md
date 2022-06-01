@@ -55,6 +55,9 @@ It's up to you to write an "9wm-mm" program and put it in your path somewhere,
 if you want to use this for something.
 I have mine run "google-chrome-stable --show-app-list".
 
+Alternatively, you can use the -mm command line option to specify the command 
+to run (much like with -term).
+
 
 What if I find a bug?
 =====================
